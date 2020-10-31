@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "SET DEBUG=app:* & nodemon index",
-    "start": "SET NODE_ENV=production & node index",
+    "dev": "SET DEBUG=app:* && nodemon index",
+    "start": "SET NODE_ENV=production && node index",
     "test": "mocha --exit",
     "cover": "nyc npm run test",
     "report": "nyc report --reporter=html && cd coverage && index.html"
@@ -16,6 +16,7 @@
   "dependencies": {
     "@hapi/boom": "^9.1.0",
     "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -46,9 +47,9 @@
   "nyc": {
     "all": true,
     "include": [
-      "routes", 
-      "services", 
-      "lib", 
+      "routes",
+      "services",
+      "lib",
       "utils"
     ]
   }

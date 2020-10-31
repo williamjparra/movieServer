@@ -7,13 +7,16 @@ const moviesApi = require('./routes/movies.js');
 
 const { logErrors, errorHandlers, wrapErrors } = require('./utils/middleware/errorHandlers.js')
 const notFoundHandler = require('./utils/middleware/notFoundHandler')
+const userMoviesApi = require('./routes/userMovies')
 
 app.use(cors())
 
 //body parser
 app.use(express.json())
 
+// routers
 moviesApi(app);
+userMoviesApi(app)
 
 // catch 404
 app.use(notFoundHandler);
